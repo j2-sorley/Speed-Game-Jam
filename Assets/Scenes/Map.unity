@@ -825,87 +825,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6949280183219358778, guid: e9ff90bbe3e39214a877141346e1ae23, type: 3}
   m_PrefabInstance: {fileID: 1326013510}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &302855023
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1136130331396647390, guid: a72857708bd8f804a90fe0211d6da0d8, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.098537594
-      objectReference: {fileID: 0}
-    - target: {fileID: 1136130331396647390, guid: a72857708bd8f804a90fe0211d6da0d8, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.000000017649615
-      objectReference: {fileID: 0}
-    - target: {fileID: 1136130331396647390, guid: a72857708bd8f804a90fe0211d6da0d8, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0.0000000017476559
-      objectReference: {fileID: 0}
-    - target: {fileID: 3699760733184591774, guid: a72857708bd8f804a90fe0211d6da0d8, type: 3}
-      propertyPath: m_Name
-      value: Quad Bike
-      objectReference: {fileID: 0}
-    - target: {fileID: 4108218763414471149, guid: a72857708bd8f804a90fe0211d6da0d8, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.098537594
-      objectReference: {fileID: 0}
-    - target: {fileID: 4108218763414471149, guid: a72857708bd8f804a90fe0211d6da0d8, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.000000017649615
-      objectReference: {fileID: 0}
-    - target: {fileID: 4108218763414471149, guid: a72857708bd8f804a90fe0211d6da0d8, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0.0000000017476559
-      objectReference: {fileID: 0}
-    - target: {fileID: 7656582090913655479, guid: a72857708bd8f804a90fe0211d6da0d8, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 634.40497
-      objectReference: {fileID: 0}
-    - target: {fileID: 7656582090913655479, guid: a72857708bd8f804a90fe0211d6da0d8, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 10.685791
-      objectReference: {fileID: 0}
-    - target: {fileID: 7656582090913655479, guid: a72857708bd8f804a90fe0211d6da0d8, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 438.98953
-      objectReference: {fileID: 0}
-    - target: {fileID: 7656582090913655479, guid: a72857708bd8f804a90fe0211d6da0d8, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7656582090913655479, guid: a72857708bd8f804a90fe0211d6da0d8, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7656582090913655479, guid: a72857708bd8f804a90fe0211d6da0d8, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7656582090913655479, guid: a72857708bd8f804a90fe0211d6da0d8, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7656582090913655479, guid: a72857708bd8f804a90fe0211d6da0d8, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7656582090913655479, guid: a72857708bd8f804a90fe0211d6da0d8, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7656582090913655479, guid: a72857708bd8f804a90fe0211d6da0d8, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: a72857708bd8f804a90fe0211d6da0d8, type: 3}
 --- !u!1001 &313570026
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3821,6 +3740,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 23055005552026272, guid: 52316e3e78c11ac4db135f7d117875ce, type: 3}
+      propertyPath: m_StitchLightmapSeams
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5980,7 +5903,6 @@ SceneRoots:
   - {fileID: 253381263}
   - {fileID: 186570449}
   - {fileID: 181110554}
-  - {fileID: 302855023}
   - {fileID: 2058274374}
   - {fileID: 1869973119}
   - {fileID: 821611338}
