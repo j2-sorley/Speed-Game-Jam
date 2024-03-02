@@ -38,8 +38,8 @@ public class PrometeoCarController : MonoBehaviour
       public int brakeForce = 350; // The strength of the wheel brakes.
       [Range(1, 10)]
       public int decelerationMultiplier = 2; // How fast the car decelerates when the user is not using the throttle.
-      [Range(1, 10)]
-      public int handbrakeDriftMultiplier = 5; // How much grip the car loses when the user hit the handbrake.
+      [Range(0f, 10)]
+      public float handbrakeDriftMultiplier = 5; // How much grip the car loses when the user hit the handbrake.
       [Space(10)]
       public Vector3 bodyMassCenter; // This is a vector that contains the center of mass of the car. I recommend to set this value
                                     // in the points x = 0 and z = 0 of your car. You can select the value that you want in the y axis,
