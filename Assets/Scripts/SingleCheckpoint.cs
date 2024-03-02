@@ -7,7 +7,7 @@ public class SingleCheckpoint : MonoBehaviour
     private CheckpointManager checkpointManager;
     private void OnTriggerEnter(Collider other)
     {
-        if (other.name == "Quad Bike")
+        if (other.name == "New Quad Bike")
         {
             //Debug.Log("Triggered!");
             checkpointManager.PlayerThroughCheckpoint(this);
