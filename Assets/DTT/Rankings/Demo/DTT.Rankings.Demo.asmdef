@@ -1,0 +1,15 @@
+{
+    "name": "DTT.Rankings.Demo",
+    "references": [
+        "GUID:fe2b78de511a01c48a2c9344085c743b"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

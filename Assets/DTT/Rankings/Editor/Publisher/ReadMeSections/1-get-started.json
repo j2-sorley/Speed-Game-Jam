@@ -1,0 +1,11 @@
+﻿{
+  "title": "Rankings: get started quickly",
+  "text": "[Open a scene, create a Canvas and add to it the RankingsUI prefab. It can be found in ‘Demo/Prefab/’. All references should be correctly set by default. Configure the RankingSettings scriptable object to fit your needs.Or you can create a new one by right-clicking and selecting ‘Create/DTT/Rankings/RankingSettings’.][Want to dive deeper? Take a look at our documentation:][l]",
+  "links": [
+    {
+      "text": "Open documentation",
+      "url": "Documentation.pdf",
+      "inline": false
+    }
+  ]
+}
