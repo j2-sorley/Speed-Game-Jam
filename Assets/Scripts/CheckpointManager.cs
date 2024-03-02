@@ -2,12 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using Text = TMPro.TextMeshProUGUI;
 
 public class CheckpointManager : MonoBehaviour
 {
     [SerializeField] private Transform checkpointTransform;
     [SerializeField] private List<SingleCheckpoint> singleCheckpointList;
     [SerializeField] private List<AIQuadContoller> aiList;
+    [SerializeField] private Text startText;
     private int nextCheckpointIndex;
 
     private void Awake()
@@ -33,9 +35,9 @@ public class CheckpointManager : MonoBehaviour
             }
             
         }
-        aiList = FindObjectsOfType<AIQuadContoller>().ToList<AIQuadContoller>();
-
         
+
+        StartCoroutine(StartRace());
     }
 
     public void PlayerThroughCheckpoint(SingleCheckpoint checkpointSingle)
@@ -64,5 +66,12 @@ public class CheckpointManager : MonoBehaviour
     private IEnumerator StartRace()
     {
         yield return new WaitForSeconds(1f);
+        startText.text = "2";
+        yield return new WaitForSeconds(1f);
+        startText.text = "1";
+        yield return new WaitForSeconds(1f);
+        startText.text = "GO!";
+        aiList = FindObjectsOfType<AIQuadContoller>().ToList<AIQuadContoller>();
+        AssignIntialDestinations();
     }
 }

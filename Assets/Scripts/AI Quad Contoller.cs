@@ -7,6 +7,7 @@ using UnityEngine.AI;
 public class AIQuadContoller : MonoBehaviour
 {
     [SerializeField] private NavMeshAgent agent;
+    [SerializeField] Vector3 cuurentPosition;
 
     // Start is called before the first frame update
     void Start()
@@ -22,6 +23,7 @@ public class AIQuadContoller : MonoBehaviour
 
     public void SetDestination(Vector3 positon)
     {
+        cuurentPosition = positon;
         agent.SetDestination(positon);
     }
 
