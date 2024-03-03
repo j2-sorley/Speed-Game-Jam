@@ -16,14 +16,14 @@ using UnityEngine.UI;
 
 public class PrometeoCarController : MonoBehaviour
 {
-    public Transform centreOfMass;
+    private terrainType currentTerrainType;
     //CAR SETUP
 
       [Space(20)]
       //[Header("CAR SETUP")]
       [Space(10)]
       [Range(20, 190)]
-      public int maxSpeed = 90; //The maximum speed that the car can reach in km/h.
+      public int maxSpeed = 80; //The maximum speed that the car can reach in km/h.
       [Range(10, 120)]
       public int maxReverseSpeed = 45; //The maximum speed that the car can reach while going on reverse in km/h.
       [Range(1, 10)]
@@ -39,7 +39,7 @@ public class PrometeoCarController : MonoBehaviour
       [Range(1, 10)]
       public int decelerationMultiplier = 2; // How fast the car decelerates when the user is not using the throttle.
       [Range(0f, 10)]
-      public float handbrakeDriftMultiplier = 5; // How much grip the car loses when the user hit the handbrake.
+      public float handbrakeDriftMultiplier = 0; // How much grip the car loses when the user hit the handbrake.
       [Space(10)]
       public Vector3 bodyMassCenter; // This is a vector that contains the center of mass of the car. I recommend to set this value
                                     // in the points x = 0 and z = 0 of your car. You can select the value that you want in the y axis,
@@ -797,13 +797,45 @@ public class PrometeoCarController : MonoBehaviour
                 {
                     float textureValue = splatmapData[0, 0, i];
                     // Do something based on the texture value, like checking for a specific threshold
+
                     if (textureValue > 0.5f)
                     {
-                        Debug.Log("Player is on texture layer: " + terrainData.terrainLayers[i].name);
+                       
                         // Do whatever you need to do with this information
+
+                        switch(terrainData.terrainLayers[i].name)
+                        {
+                            case "Grass01":
+                                maxSpeed = 50;
+                                currentTerrainType = terrainType.GRASS;
+
+                                break;
+                            case "layer_MudMud_Normal2e716cd1dfbd9e5a":
+                                maxSpeed = 60;
+                                currentTerrainType = terrainType.MUD;
+                                break;
+                            case "layer_RockwallRockwall_Normalb3407d0e55802f81":
+                                currentTerrainType = terrainType.ROCK;
+                                maxSpeed = 80;
+                                break;
+                            case " layer_Sand_DesertBaseGrass_normals2023054508611406":
+                                currentTerrainType = terrainType.SAND;
+                                maxSpeed = 50;
+                                break;
+                        }
+                        GetComponent<ParticleController>().SetParticle(currentTerrainType);
+
                     }
                 }
             }
         }
     }
+}
+
+public enum terrainType
+{
+    MUD = 0,
+    ROCK = 1,
+    GRASS = 2,
+    SAND = 3
 }

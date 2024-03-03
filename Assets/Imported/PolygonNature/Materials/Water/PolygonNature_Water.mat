@@ -93,14 +93,14 @@ Material:
     - _SpecularHighlights: 0
     - _SrcBlend: 1
     - _UVSec: 0
-    - _WaterDepth: 0.09
+    - _WaterDepth: 0.803
     - _WaterFalloff: 2
     - _WaterOpacity: 0.8
     - _WaterReflection: 1
-    - _WaterScale: 0.175
+    - _WaterScale: 0.238
     - _WaterSmoothness: 2
     - _WaterSpecular: 0
-    - _WaterSpeed: 0.042
+    - _WaterSpeed: 0.179
     - _ZWrite: 1
     - __dirty: 1
     m_Colors:
