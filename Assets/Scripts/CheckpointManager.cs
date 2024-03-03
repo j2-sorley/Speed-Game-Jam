@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 using Text = TMPro.TextMeshProUGUI;
 
@@ -11,6 +13,12 @@ public class CheckpointManager : MonoBehaviour
     [SerializeField] private List<AIQuadContoller> aiList;
     [SerializeField] private Text startText;
     private int nextCheckpointIndex;
+
+    public event EventHandler OnPlayerCorrectCheckpoint;
+    public event EventHandler OnPlayerIncorrectCheckpoint;
+
+    [SerializeField] private Material greenMaterial;
+    [SerializeField] private Material clearMaterial;
 
     private void Awake()
     {
@@ -40,7 +48,7 @@ public class CheckpointManager : MonoBehaviour
         StartCoroutine(StartRace());
     }
 
-    public void PlayerThroughCheckpoint(SingleCheckpoint checkpointSingle)
+    public void PlayerThroughCheckpoint(SingleCheckpoint checkpointSingle, Renderer render)
     {
         //Debug.Log(checkpointSingle.transform.name);
         //Debug.Log(singleCheckpointList.IndexOf(checkpointSingle));
@@ -48,10 +56,14 @@ public class CheckpointManager : MonoBehaviour
         {
             nextCheckpointIndex = (nextCheckpointIndex + 1) % singleCheckpointList.Count;
             Debug.Log("Correct");
+            OnPlayerCorrectCheckpoint?.Invoke(this, EventArgs.Empty);
+            render.material = greenMaterial;
         }
         else
         {
             Debug.Log("Wrong");
+            OnPlayerIncorrectCheckpoint?.Invoke(this, EventArgs.Empty);
+            render.material = clearMaterial;
         }
     }
 
