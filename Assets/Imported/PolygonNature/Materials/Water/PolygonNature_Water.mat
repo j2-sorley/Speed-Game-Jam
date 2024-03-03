@@ -46,7 +46,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Foam_Texture:
-        m_Texture: {fileID: 2800000, guid: 953aee88aa8b49347a6abd3be0f0eb54, type: 3}
+        m_Texture: {fileID: 2800000, guid: b19982527d231ec4cb37e8373f793731, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
@@ -79,9 +79,9 @@ Material:
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
-    - _FoamDepth: 1.3
+    - _FoamDepth: 1.06
     - _FoamFalloff: -4.81
-    - _FoamSmoothness: -21.95
+    - _FoamSmoothness: -14.8
     - _GlossMapScale: 1
     - _Glossiness: 0
     - _GlossyReflections: 0
@@ -93,14 +93,14 @@ Material:
     - _SpecularHighlights: 0
     - _SrcBlend: 1
     - _UVSec: 0
-    - _WaterDepth: 0.803
-    - _WaterFalloff: 2
-    - _WaterOpacity: 0.8
-    - _WaterReflection: 1
-    - _WaterScale: 0.238
+    - _WaterDepth: 0.478
+    - _WaterFalloff: 3.27
+    - _WaterOpacity: 0.799
+    - _WaterReflection: 0.088
+    - _WaterScale: 0.224
     - _WaterSmoothness: 2
     - _WaterSpecular: 0
-    - _WaterSpeed: 0.179
+    - _WaterSpeed: 0.478
     - _ZWrite: 1
     - __dirty: 1
     m_Colors:
