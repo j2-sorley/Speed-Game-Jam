@@ -10,9 +10,12 @@ public class ParticleController : MonoBehaviour
     [SerializeField] private List<ParticleSystem> waterParticles;
     [SerializeField] private List<ParticleSystem> grassParticles;
 
+    private terrainType previousTerrainType;
 
     public void SetParticle(terrainType terrain)
     {
+        //if (previousTerrainType == terrain) return;
+        //previousTerrainType = terrain;
         switch (terrain)
         {
             case terrainType.MUD:
@@ -32,7 +35,8 @@ public class ParticleController : MonoBehaviour
 
     public void SetActive(List<ParticleSystem> particles)
     {
-        if (particles[0].isPlaying && mudParticles[1].isPlaying) { return; }
+        Debug.Log(particles);
+        if (particles[0].isPlaying && particles[1].isPlaying) { return; }
 
         ClearParticles();
 

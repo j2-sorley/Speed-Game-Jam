@@ -778,14 +778,12 @@ public class PrometeoCarController : MonoBehaviour
     {
         RaycastHit hit;
         // Cast a raycast downwards from the player
-        if (Physics.Raycast(transform.position - Vector3.forward * 2 +  Vector3.up *3f, Vector3.down, out hit))
+        if (Physics.Raycast(transform.position - Vector3.forward * 1.2f +  Vector3.up *3f, Vector3.down, out hit))
         {
-            Debug.Log("Terrain found:" + hit.transform.gameObject.name);
             Terrain terrain = hit.collider.GetComponent<Terrain>();
             // Check if what we hit is a terrain
             if (terrain != null)
             {
-                Debug.Log("Terrain found");
                 // Get the terrain's texture at the hit point
                 TerrainData terrainData = terrain.terrainData;
                 int mapX = (int)((hit.point.x - terrain.transform.position.x) / terrainData.size.x * terrainData.alphamapWidth);
@@ -798,12 +796,11 @@ public class PrometeoCarController : MonoBehaviour
                     float textureValue = splatmapData[0, 0, i];
                     // Do something based on the texture value, like checking for a specific threshold
 
-                    if (textureValue > 0.5f)
+                    if (textureValue > 0.3f)
                     {
-                       
-                        // Do whatever you need to do with this information
 
-                        switch(terrainData.terrainLayers[i].name)
+                        // Do whatever you need to do with this information
+                        switch (terrainData.terrainLayers[i].name)
                         {
                             case "Grass01":
                                 maxSpeed = 50;
@@ -818,8 +815,9 @@ public class PrometeoCarController : MonoBehaviour
                                 currentTerrainType = terrainType.ROCK;
                                 maxSpeed = 80;
                                 break;
-                            case " layer_Sand_DesertBaseGrass_normals2023054508611406":
+                            case "layer_Sand_DesertBaseGrass_normals2023054508611406":
                                 currentTerrainType = terrainType.SAND;
+                                Debug.Log("Sand");
                                 maxSpeed = 50;
                                 break;
                         }
