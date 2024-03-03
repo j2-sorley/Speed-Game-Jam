@@ -35,7 +35,6 @@ public class ParticleController : MonoBehaviour
 
     public void SetActive(List<ParticleSystem> particles)
     {
-        Debug.Log(particles);
         if (particles[0].isPlaying && particles[1].isPlaying) { return; }
 
         ClearParticles();
