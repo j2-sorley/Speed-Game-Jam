@@ -12,16 +12,20 @@ public class CheckpointManager : MonoBehaviour
     [SerializeField] private List<SingleCheckpoint> singleCheckpointList;
     [SerializeField] private List<AIQuadContoller> aiList;
     [SerializeField] private Text startText;
-    private int nextCheckpointIndex;
+    [SerializeField] private int nextCheckpointIndex;
 
     public event EventHandler OnPlayerCorrectCheckpoint;
     public event EventHandler OnPlayerIncorrectCheckpoint;
 
     [SerializeField] private Material greenMaterial;
+    [SerializeField] private Material redMaterial;
     [SerializeField] private Material clearMaterial;
+
+    //[SerializeField] private SingleCheckpoint nextCheckpoint;
 
     private void Awake()
     {
+
         singleCheckpointList = new List<SingleCheckpoint>();
         foreach (Transform seperateCheckpoint in checkpointTransform)
         {
@@ -31,7 +35,7 @@ public class CheckpointManager : MonoBehaviour
             singleCheckpointList.Add(singleCheckpoint);
         }
 
-        for ( int i = 0; i < singleCheckpointList.Count; i++)
+        for (int i = 0; i < singleCheckpointList.Count; i++)
         {
             if (i == singleCheckpointList.Count-1)
             {
@@ -41,14 +45,14 @@ public class CheckpointManager : MonoBehaviour
             {
                 singleCheckpointList[i].SetNextCheckpoint(singleCheckpointList[i+1]);
             }
-            
+
         }
         
 
         StartCoroutine(StartRace());
     }
 
-    public void PlayerThroughCheckpoint(SingleCheckpoint checkpointSingle, Renderer render)
+    public void PlayerThroughCheckpoint(SingleCheckpoint checkpointSingle)
     {
         //Debug.Log(checkpointSingle.transform.name);
         //Debug.Log(singleCheckpointList.IndexOf(checkpointSingle));
@@ -57,13 +61,16 @@ public class CheckpointManager : MonoBehaviour
             nextCheckpointIndex = (nextCheckpointIndex + 1) % singleCheckpointList.Count;
             Debug.Log("Correct");
             OnPlayerCorrectCheckpoint?.Invoke(this, EventArgs.Empty);
-            render.material = greenMaterial;
         }
+        /*else if (singleCheckpointList.IndexOf(checkpointSingle) == nextCheckpointIndex + 1)
+        {
+            Debug.Log("Wrong");
+            checkpoint.rend.material = redMaterial;
+        }*/
         else
         {
             Debug.Log("Wrong");
             OnPlayerIncorrectCheckpoint?.Invoke(this, EventArgs.Empty);
-            render.material = clearMaterial;
         }
     }
 
