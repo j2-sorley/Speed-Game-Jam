@@ -17,7 +17,8 @@ public class CheckpointManager : MonoBehaviour
     public event EventHandler OnPlayerCorrectCheckpoint;
     public event EventHandler OnPlayerIncorrectCheckpoint;
 
-    [SerializeField] private Material[] startingMaterial;
+    [SerializeField] private Material greenMaterial;
+    [SerializeField] private Material clearMaterial;
 
     private void Awake()
     {
@@ -28,11 +29,6 @@ public class CheckpointManager : MonoBehaviour
             SingleCheckpoint singleCheckpoint = seperateCheckpoint.GetComponent<SingleCheckpoint>();
             singleCheckpoint.SetCheckpoints(this);
             singleCheckpointList.Add(singleCheckpoint);
-        }
-
-        for (int i = 0; i < 3; i++)
-        {
-            startingMaterial[i].GetComponent<Material>();
         }
 
         for ( int i = 0; i < singleCheckpointList.Count; i++)
@@ -52,7 +48,7 @@ public class CheckpointManager : MonoBehaviour
         StartCoroutine(StartRace());
     }
 
-    public void PlayerThroughCheckpoint(SingleCheckpoint checkpointSingle)
+    public void PlayerThroughCheckpoint(SingleCheckpoint checkpointSingle, Renderer render)
     {
         //Debug.Log(checkpointSingle.transform.name);
         //Debug.Log(singleCheckpointList.IndexOf(checkpointSingle));
@@ -61,11 +57,13 @@ public class CheckpointManager : MonoBehaviour
             nextCheckpointIndex = (nextCheckpointIndex + 1) % singleCheckpointList.Count;
             Debug.Log("Correct");
             OnPlayerCorrectCheckpoint?.Invoke(this, EventArgs.Empty);
+            render.material = greenMaterial;
         }
         else
         {
             Debug.Log("Wrong");
             OnPlayerIncorrectCheckpoint?.Invoke(this, EventArgs.Empty);
+            render.material = clearMaterial;
         }
     }
 

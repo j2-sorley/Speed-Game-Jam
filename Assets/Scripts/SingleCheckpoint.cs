@@ -8,7 +8,8 @@ public class SingleCheckpoint : MonoBehaviour
     [SerializeField] private SingleCheckpoint nextCheckpoint;
     [SerializeField] private Transform point1;
     [SerializeField] private Transform point2;
-    [SerializeField] private Material startingMaterial;
+    [SerializeField] private Material greenMaterial;
+    [SerializeField] private Material clearMaterial;
     [SerializeField] private Renderer rend;
 
     private void Awake()
@@ -20,8 +21,9 @@ public class SingleCheckpoint : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            checkpointManager.PlayerThroughCheckpoint(this);
-            rend.material = startingMaterial;
+            checkpointManager.PlayerThroughCheckpoint(this, rend);
+            rend.material = clearMaterial;
+            nextCheckpoint.rend.material = greenMaterial;
         }
 
         if (other.tag == "AI")
@@ -32,6 +34,14 @@ public class SingleCheckpoint : MonoBehaviour
                 nextCheckpoint.CalculateNavigation(other.gameObject.GetComponent<AIQuadContoller>());
             }
             
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Player")
+        {
+            rend.material = clearMaterial;
         }
     }
 
