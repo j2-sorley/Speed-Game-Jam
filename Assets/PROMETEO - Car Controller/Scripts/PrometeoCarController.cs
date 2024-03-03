@@ -16,7 +16,7 @@ using UnityEngine.UI;
 
 public class PrometeoCarController : MonoBehaviour
 {
-
+    public Transform centreOfMass;
     //CAR SETUP
 
       [Space(20)]
@@ -369,6 +369,8 @@ public class PrometeoCarController : MonoBehaviour
       // We call the method AnimateWheelMeshes() in order to match the wheel collider movements with the 3D meshes of the wheels.
       AnimateWheelMeshes();
 
+
+        CheckTerrain();
     }
 
     // This method converts the car speed data from float to string, and then set the text of the UI carSpeedText with this value.
@@ -771,4 +773,37 @@ public class PrometeoCarController : MonoBehaviour
       }
     }
 
+
+    public void CheckTerrain()
+    {
+        RaycastHit hit;
+        // Cast a raycast downwards from the player
+        if (Physics.Raycast(transform.position - Vector3.forward * 2 +  Vector3.up *3f, Vector3.down, out hit))
+        {
+            Debug.Log("Terrain found:" + hit.transform.gameObject.name);
+            Terrain terrain = hit.collider.GetComponent<Terrain>();
+            // Check if what we hit is a terrain
+            if (terrain != null)
+            {
+                Debug.Log("Terrain found");
+                // Get the terrain's texture at the hit point
+                TerrainData terrainData = terrain.terrainData;
+                int mapX = (int)((hit.point.x - terrain.transform.position.x) / terrainData.size.x * terrainData.alphamapWidth);
+                int mapZ = (int)((hit.point.z - terrain.transform.position.z) / terrainData.size.z * terrainData.alphamapHeight);
+                float[,,] splatmapData = terrainData.GetAlphamaps(mapX, mapZ, 1, 1);
+
+                // Now, you can check the layers of the terrain texture
+                for (int i = 0; i < terrainData.terrainLayers.Length; i++)
+                {
+                    float textureValue = splatmapData[0, 0, i];
+                    // Do something based on the texture value, like checking for a specific threshold
+                    if (textureValue > 0.5f)
+                    {
+                        Debug.Log("Player is on texture layer: " + terrainData.terrainLayers[i].name);
+                        // Do whatever you need to do with this information
+                    }
+                }
+            }
+        }
+    }
 }
