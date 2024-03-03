@@ -8,12 +8,20 @@ public class SingleCheckpoint : MonoBehaviour
     [SerializeField] private SingleCheckpoint nextCheckpoint;
     [SerializeField] private Transform point1;
     [SerializeField] private Transform point2;
+    [SerializeField] private Material startingMaterial;
+    [SerializeField] private Renderer rend;
+
+    private void Awake()
+    {
+        rend = GetComponent<Renderer>();
+        rend.enabled = true;
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
         {
-            //Debug.Log("Triggered!");
             checkpointManager.PlayerThroughCheckpoint(this);
+            rend.material = startingMaterial;
         }
 
         if (other.tag == "AI")
