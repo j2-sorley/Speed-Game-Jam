@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 [System.Serializable]
 public class ScoreData
 {
@@ -6,7 +8,8 @@ public class ScoreData
     public float time;
 }
 
+[System.Serializable]
 public class ScoreDatabase
 {
-    public ScoreData[] scores = new ScoreData[5];
+    public List<ScoreData> scores = new List<ScoreData>();
 }
