@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Unity.VisualScripting;
-using UnityEditor.TerrainTools;
 using UnityEngine;
 using Text = TMPro.TextMeshProUGUI;
 
@@ -25,6 +24,13 @@ public class CheckpointManager : MonoBehaviour
     [SerializeField] private Material clearMaterial;
 
     [SerializeField] private SingleCheckpoint nextCheckpoint;
+
+    [SerializeField] private GameObject Scoreboard;
+    [SerializeField] private GameObject playerui;
+    [SerializeField] private Text timeText;
+    [SerializeField] private MouseLock mouse;
+
+    private float timer;
 
     private void Awake()
     {
@@ -57,7 +63,7 @@ public class CheckpointManager : MonoBehaviour
 
     private void Update()
     {
-
+        timer += Time.deltaTime;
         if (nextCheckpointIndex >= singleCheckpointList.Count)
         {
             foreach (Transform seperateCheckpoint in checkpointTransform)
@@ -91,9 +97,13 @@ public class CheckpointManager : MonoBehaviour
             OnPlayerIncorrectCheckpoint?.Invoke(this, EventArgs.Empty);
         }
 
-        if (currentLap >= 3)
+        if (currentLap >= 2)
         {
             Debug.Log("Race Finished!");
+            Scoreboard.SetActive(true);
+            playerui.SetActive(false);
+            timeText.text = "Total Time: " + Mathf.CeilToInt(timer);
+            mouse.enableCursor();
         }
 
     }
@@ -116,6 +126,7 @@ public class CheckpointManager : MonoBehaviour
         startText.text = "GO!";
         aiList = FindObjectsOfType<AIQuadContoller>().ToList<AIQuadContoller>();
         AssignIntialDestinations();
+        timer = 0;
     }
 
     private void SetToTrue(SingleCheckpoint checkpointSingle)

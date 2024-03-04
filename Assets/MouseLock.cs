@@ -48,4 +48,9 @@ public class MouseLock : MonoBehaviour
         Menu.SetActive(false);
         Cursor.lockState  = CursorLockMode.Locked;
     }
+
+    public void enableCursor()
+    {
+        Cursor.lockState = CursorLockMode.None;
+    }
 }
