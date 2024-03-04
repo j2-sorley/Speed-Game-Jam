@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class SingleCheckpoint : MonoBehaviour
 {
@@ -13,6 +15,8 @@ public class SingleCheckpoint : MonoBehaviour
     [SerializeField] private Material clearMaterial;
     [SerializeField] private Renderer rend;
     [SerializeField] private bool active;
+    [SerializeField] public bool checkpointMarked;
+    //[SerializeField] private GameObject wrongCheckpointObject;
 
     private void Awake()
     {
@@ -26,6 +30,8 @@ public class SingleCheckpoint : MonoBehaviour
             if (!active)
             {
                 rend.material = redMaterial;
+                //OnPlayerIncorrectCheckpoint?.Invoke(this, EventArgs.Empty);
+                //wrongCheckpointObject.SetActive(true);
                 return;
             }
             checkpointManager.PlayerThroughCheckpoint(this);
@@ -33,6 +39,7 @@ public class SingleCheckpoint : MonoBehaviour
             nextCheckpoint.rend.material = greenMaterial;
             nextCheckpoint.Activate();
             active = false;
+            checkpointMarked = true;
         }
 
         if (other.tag == "AI")
@@ -54,6 +61,7 @@ public class SingleCheckpoint : MonoBehaviour
             if (!active)
             {
                 rend.material = clearMaterial;
+                //wrongCheckpointObject.SetActive(false);
                 return;
             }
         }
@@ -83,5 +91,20 @@ public class SingleCheckpoint : MonoBehaviour
     public void Activate()
     {
         active = true;
+    }
+
+    public bool CheckpointMarkedToTrue()
+    {
+        return checkpointMarked = true;
+    }
+
+    public bool CheckpointMarkedToFalse()
+    {
+        return checkpointMarked = false;
+    }
+
+    public bool CheckCheckPointMark()
+    {
+        return checkpointMarked;
     }
 }
