@@ -155,8 +155,10 @@ MonoBehaviour:
   point1: {fileID: 2011586909281708368}
   point2: {fileID: 1456979443810080171}
   greenMaterial: {fileID: 2100000, guid: 438643ac49b5a1f46aa05f8f381a7122, type: 2}
+  redMaterial: {fileID: 2100000, guid: 589c438b4c39e5e44b249724f0f526d7, type: 2}
   clearMaterial: {fileID: 2100000, guid: 39cd7025a7de9144b8263137228b62be, type: 2}
   rend: {fileID: 0}
+  active: 0
 --- !u!1 &900205235570219790
 GameObject:
   m_ObjectHideFlags: 0
@@ -343,8 +345,10 @@ MonoBehaviour:
   point1: {fileID: 7937677247034892204}
   point2: {fileID: 8124702230239057514}
   greenMaterial: {fileID: 2100000, guid: 438643ac49b5a1f46aa05f8f381a7122, type: 2}
+  redMaterial: {fileID: 2100000, guid: 589c438b4c39e5e44b249724f0f526d7, type: 2}
   clearMaterial: {fileID: 2100000, guid: 39cd7025a7de9144b8263137228b62be, type: 2}
   rend: {fileID: 0}
+  active: 0
 --- !u!1 &1611704050334162420
 GameObject:
   m_ObjectHideFlags: 0
@@ -500,8 +504,10 @@ MonoBehaviour:
   point1: {fileID: 8569363366055684333}
   point2: {fileID: 4100858364154430148}
   greenMaterial: {fileID: 2100000, guid: 438643ac49b5a1f46aa05f8f381a7122, type: 2}
+  redMaterial: {fileID: 2100000, guid: 589c438b4c39e5e44b249724f0f526d7, type: 2}
   clearMaterial: {fileID: 2100000, guid: 39cd7025a7de9144b8263137228b62be, type: 2}
   rend: {fileID: 0}
+  active: 0
 --- !u!1 &2121358937676629261
 GameObject:
   m_ObjectHideFlags: 0
@@ -750,8 +756,10 @@ MonoBehaviour:
   point1: {fileID: 3746348680981736640}
   point2: {fileID: 2068571260280744099}
   greenMaterial: {fileID: 2100000, guid: 438643ac49b5a1f46aa05f8f381a7122, type: 2}
+  redMaterial: {fileID: 2100000, guid: 589c438b4c39e5e44b249724f0f526d7, type: 2}
   clearMaterial: {fileID: 2100000, guid: 39cd7025a7de9144b8263137228b62be, type: 2}
   rend: {fileID: 0}
+  active: 0
 --- !u!1 &2609348040065675220
 GameObject:
   m_ObjectHideFlags: 0
@@ -907,8 +915,10 @@ MonoBehaviour:
   point1: {fileID: 5690837538819889378}
   point2: {fileID: 6988503475981608023}
   greenMaterial: {fileID: 2100000, guid: 438643ac49b5a1f46aa05f8f381a7122, type: 2}
+  redMaterial: {fileID: 2100000, guid: 589c438b4c39e5e44b249724f0f526d7, type: 2}
   clearMaterial: {fileID: 2100000, guid: 39cd7025a7de9144b8263137228b62be, type: 2}
   rend: {fileID: 0}
+  active: 0
 --- !u!1 &3118211350954706508
 GameObject:
   m_ObjectHideFlags: 0
@@ -1188,8 +1198,10 @@ MonoBehaviour:
   point1: {fileID: 7849966664564137935}
   point2: {fileID: 6118359478535230578}
   greenMaterial: {fileID: 2100000, guid: 438643ac49b5a1f46aa05f8f381a7122, type: 2}
+  redMaterial: {fileID: 2100000, guid: 589c438b4c39e5e44b249724f0f526d7, type: 2}
   clearMaterial: {fileID: 2100000, guid: 39cd7025a7de9144b8263137228b62be, type: 2}
   rend: {fileID: 0}
+  active: 0
 --- !u!1 &4550991291195227803
 GameObject:
   m_ObjectHideFlags: 0
@@ -1376,8 +1388,10 @@ MonoBehaviour:
   point1: {fileID: 138438109656745459}
   point2: {fileID: 5014623066821417024}
   greenMaterial: {fileID: 2100000, guid: 438643ac49b5a1f46aa05f8f381a7122, type: 2}
+  redMaterial: {fileID: 2100000, guid: 589c438b4c39e5e44b249724f0f526d7, type: 2}
   clearMaterial: {fileID: 2100000, guid: 39cd7025a7de9144b8263137228b62be, type: 2}
   rend: {fileID: 0}
+  active: 0
 --- !u!1 &4977592508302257050
 GameObject:
   m_ObjectHideFlags: 0
@@ -1719,8 +1733,10 @@ MonoBehaviour:
   point1: {fileID: 5861560547292662374}
   point2: {fileID: 1409774771952811841}
   greenMaterial: {fileID: 2100000, guid: 438643ac49b5a1f46aa05f8f381a7122, type: 2}
+  redMaterial: {fileID: 2100000, guid: 589c438b4c39e5e44b249724f0f526d7, type: 2}
   clearMaterial: {fileID: 2100000, guid: 39cd7025a7de9144b8263137228b62be, type: 2}
   rend: {fileID: 0}
+  active: 0
 --- !u!1 &6455801047705143895
 GameObject:
   m_ObjectHideFlags: 0
@@ -1845,8 +1861,10 @@ MonoBehaviour:
   point1: {fileID: 8956832756737406437}
   point2: {fileID: 4278348878657400944}
   greenMaterial: {fileID: 2100000, guid: 438643ac49b5a1f46aa05f8f381a7122, type: 2}
+  redMaterial: {fileID: 2100000, guid: 589c438b4c39e5e44b249724f0f526d7, type: 2}
   clearMaterial: {fileID: 2100000, guid: 39cd7025a7de9144b8263137228b62be, type: 2}
   rend: {fileID: 0}
+  active: 0
 --- !u!1 &6492530785279868674
 GameObject:
   m_ObjectHideFlags: 0
@@ -2002,8 +2020,10 @@ MonoBehaviour:
   point1: {fileID: 4756149052208167190}
   point2: {fileID: 3834013079085931565}
   greenMaterial: {fileID: 2100000, guid: 438643ac49b5a1f46aa05f8f381a7122, type: 2}
+  redMaterial: {fileID: 2100000, guid: 589c438b4c39e5e44b249724f0f526d7, type: 2}
   clearMaterial: {fileID: 2100000, guid: 39cd7025a7de9144b8263137228b62be, type: 2}
   rend: {fileID: 0}
+  active: 1
 --- !u!1 &6939240335382021793
 GameObject:
   m_ObjectHideFlags: 0
@@ -2128,8 +2148,10 @@ MonoBehaviour:
   point1: {fileID: 7167723102159615567}
   point2: {fileID: 3655308681066097718}
   greenMaterial: {fileID: 2100000, guid: 438643ac49b5a1f46aa05f8f381a7122, type: 2}
+  redMaterial: {fileID: 2100000, guid: 589c438b4c39e5e44b249724f0f526d7, type: 2}
   clearMaterial: {fileID: 2100000, guid: 39cd7025a7de9144b8263137228b62be, type: 2}
   rend: {fileID: 0}
+  active: 0
 --- !u!1 &7069656859985236769
 GameObject:
   m_ObjectHideFlags: 0
@@ -2230,7 +2252,9 @@ MonoBehaviour:
   singleCheckpointList: []
   aiList: []
   startText: {fileID: 0}
+  nextCheckpointIndex: 0
   greenMaterial: {fileID: 2100000, guid: 438643ac49b5a1f46aa05f8f381a7122, type: 2}
+  redMaterial: {fileID: 0}
   clearMaterial: {fileID: 2100000, guid: 39cd7025a7de9144b8263137228b62be, type: 2}
 --- !u!1 &7222536213971096396
 GameObject:
@@ -2356,8 +2380,10 @@ MonoBehaviour:
   point1: {fileID: 4558714086230410682}
   point2: {fileID: 2049928816734646724}
   greenMaterial: {fileID: 2100000, guid: 438643ac49b5a1f46aa05f8f381a7122, type: 2}
+  redMaterial: {fileID: 2100000, guid: 589c438b4c39e5e44b249724f0f526d7, type: 2}
   clearMaterial: {fileID: 2100000, guid: 39cd7025a7de9144b8263137228b62be, type: 2}
   rend: {fileID: 0}
+  active: 0
 --- !u!1 &7350160794588455685
 GameObject:
   m_ObjectHideFlags: 0
@@ -2513,8 +2539,10 @@ MonoBehaviour:
   point1: {fileID: 1068587500853238859}
   point2: {fileID: 7934851039408729270}
   greenMaterial: {fileID: 2100000, guid: 438643ac49b5a1f46aa05f8f381a7122, type: 2}
+  redMaterial: {fileID: 2100000, guid: 589c438b4c39e5e44b249724f0f526d7, type: 2}
   clearMaterial: {fileID: 2100000, guid: 39cd7025a7de9144b8263137228b62be, type: 2}
   rend: {fileID: 0}
+  active: 0
 --- !u!1 &7371454556239892174
 GameObject:
   m_ObjectHideFlags: 0
@@ -2701,8 +2729,10 @@ MonoBehaviour:
   point1: {fileID: 3236456846138616129}
   point2: {fileID: 1220229833283449068}
   greenMaterial: {fileID: 2100000, guid: 438643ac49b5a1f46aa05f8f381a7122, type: 2}
+  redMaterial: {fileID: 2100000, guid: 589c438b4c39e5e44b249724f0f526d7, type: 2}
   clearMaterial: {fileID: 2100000, guid: 39cd7025a7de9144b8263137228b62be, type: 2}
   rend: {fileID: 0}
+  active: 0
 --- !u!1 &8754062475906195561
 GameObject:
   m_ObjectHideFlags: 0
@@ -2889,8 +2919,10 @@ MonoBehaviour:
   point1: {fileID: 997921145217632855}
   point2: {fileID: 2575777060094793540}
   greenMaterial: {fileID: 2100000, guid: 438643ac49b5a1f46aa05f8f381a7122, type: 2}
+  redMaterial: {fileID: 2100000, guid: 589c438b4c39e5e44b249724f0f526d7, type: 2}
   clearMaterial: {fileID: 2100000, guid: 39cd7025a7de9144b8263137228b62be, type: 2}
   rend: {fileID: 0}
+  active: 0
 --- !u!1 &9217532107905780142
 GameObject:
   m_ObjectHideFlags: 0

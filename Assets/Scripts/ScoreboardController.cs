@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -19,51 +20,25 @@ public class ScoreboardController : MonoBehaviour
         }
     }
 
+    public void Button()
+    {
+        //CreateNewScore();
+    }
+
     public void CreateNewScore(string user, float bestLap, float totalTime)
     {
-        Score score = new Score();
-        score.Username = user;
-        score.bestLapFloat = bestLap;
-        score.totalTimeFloat = totalTime;
+        ScoreData score = new ScoreData();
+        score.username = user;
+        score.bestlap = bestLap;
+        score.time = totalTime;
 
-
-        string firstNum = Mathf.CeilToInt(bestLap / 60).ToString();
-        if (firstNum.Length == 1) { firstNum = "0" + firstNum; }
-
-        string secondNum = Mathf.CeilToInt(bestLap % 60).ToString();
-        if (secondNum.Length == 1) { secondNum = "0" + secondNum; }
-        score.bestLapString = firstNum + ":" + secondNum;
-
-        firstNum = Mathf.CeilToInt(totalTime / 60).ToString();
-        if (firstNum.Length == 1) { firstNum = "0" + firstNum; }
-
-        secondNum = Mathf.CeilToInt(totalTime % 60).ToString();
-        if (secondNum.Length == 1) { secondNum = "0" + secondNum; }
-        score.totalTimeString = firstNum + ":" + secondNum;
 
         AddNewScore(score);
     }
 
-    public void AddNewScore(Score score)
+    public void AddNewScore(ScoreData score)
     {
-        bool scoreadded = false;
-        Scoreboard currentScoreboard = scoreboard;
-        Scoreboard newScoreboard = scoreboard;
-        for (int i = 0; i < currentScoreboard.scores.Count; i++)
-        {
-            if (!scoreadded)
-            {
-                if (score.totalTimeFloat < currentScoreboard.scores[i].totalTimeFloat)
-                {
-                    newScoreboard.scores[i] = score;
-                    scoreadded = true;
-                }
-            }
-            else
-            {
-                newScoreboard.scores[i] = currentScoreboard.scores[i - 1];
-            }
-        }
+        
 
         UpdateScoreboard();
     }
@@ -88,5 +63,24 @@ public class ScoreboardController : MonoBehaviour
         {
             Destroy(row);
         }
+    }
+
+    public string ConvertTimeToString(float timeInSeconds)
+    {
+        int minutes = Mathf.FloorToInt(timeInSeconds / 60);
+        int seconds = Mathf.FloorToInt(timeInSeconds % 60);
+
+        return string.Format("{0:00}:{1:00}", minutes, seconds);
+    }
+
+    public void SaveToJson(ScoreDatabase score)
+    {
+        string json = JsonUtility.ToJson(score, true);
+        File.WriteAllText(Application.dataPath + "/ScoreboardData.json", json);
+    }
+
+    public void LoadFromJson(ScoreDatabase score)
+    {
+
     }
 }
