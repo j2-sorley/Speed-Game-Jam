@@ -660,15 +660,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6583199568146648513, guid: 35a3b4b80602a2a438836179c2647958, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.0985376
+      value: 0.098537624
       objectReference: {fileID: 0}
     - target: {fileID: 6583199568146648513, guid: 35a3b4b80602a2a438836179c2647958, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.000000020690734
+      value: 0.000000016223131
       objectReference: {fileID: 0}
     - target: {fileID: 6583199568146648513, guid: 35a3b4b80602a2a438836179c2647958, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.000000002048786
+      value: -0.0000000016064067
       objectReference: {fileID: 0}
     - target: {fileID: 8426805449029843344, guid: 35a3b4b80602a2a438836179c2647958, type: 3}
       propertyPath: m_LocalPosition.y
@@ -680,15 +680,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8426805449029843344, guid: 35a3b4b80602a2a438836179c2647958, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.0985376
+      value: 0.098537624
       objectReference: {fileID: 0}
     - target: {fileID: 8426805449029843344, guid: 35a3b4b80602a2a438836179c2647958, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.000000020690734
+      value: 0.000000016223131
       objectReference: {fileID: 0}
     - target: {fileID: 8426805449029843344, guid: 35a3b4b80602a2a438836179c2647958, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.000000002048786
+      value: -0.0000000016064067
       objectReference: {fileID: 0}
     - target: {fileID: 8810515491865835733, guid: 35a3b4b80602a2a438836179c2647958, type: 3}
       propertyPath: m_LocalPosition.x
@@ -872,6 +872,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6452896359450307501, guid: 34de0f9dc2fef1d4ebc5aa95eea3e1bb, type: 3}
+      propertyPath: redMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 589c438b4c39e5e44b249724f0f526d7, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

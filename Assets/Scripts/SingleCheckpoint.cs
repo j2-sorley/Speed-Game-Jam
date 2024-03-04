@@ -9,8 +9,10 @@ public class SingleCheckpoint : MonoBehaviour
     [SerializeField] private Transform point1;
     [SerializeField] private Transform point2;
     [SerializeField] private Material greenMaterial;
+    [SerializeField] private Material redMaterial;
     [SerializeField] private Material clearMaterial;
     [SerializeField] private Renderer rend;
+    [SerializeField] private bool active;
 
     private void Awake()
     {
@@ -21,9 +23,16 @@ public class SingleCheckpoint : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            checkpointManager.PlayerThroughCheckpoint(this, rend);
+            if (!active)
+            {
+                rend.material = redMaterial;
+                return;
+            }
+            checkpointManager.PlayerThroughCheckpoint(this);
             rend.material = clearMaterial;
             nextCheckpoint.rend.material = greenMaterial;
+            nextCheckpoint.Activate();
+            active = false;
         }
 
         if (other.tag == "AI")
@@ -32,6 +41,7 @@ public class SingleCheckpoint : MonoBehaviour
             if (other.gameObject.GetComponent<AIQuadContoller>() != null)
             {
                 nextCheckpoint.CalculateNavigation(other.gameObject.GetComponent<AIQuadContoller>());
+
             }
             
         }
@@ -41,11 +51,15 @@ public class SingleCheckpoint : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            rend.material = clearMaterial;
+            if (!active)
+            {
+                rend.material = clearMaterial;
+                return;
+            }
         }
-    }
+        }
 
-    public void SetCheckpoints(CheckpointManager checkpointManager)
+        public void SetCheckpoints(CheckpointManager checkpointManager)
     {
         this.checkpointManager = checkpointManager;
     }
@@ -64,5 +78,10 @@ public class SingleCheckpoint : MonoBehaviour
         Vector3 newPoint = new Vector3(randX, transform.position.y, randz);
 
         quad.SetDestination(newPoint);
+    }
+
+    public void Activate()
+    {
+        active = true;
     }
 }
