@@ -89,7 +89,9 @@ MonoBehaviour:
   singleCheckpointList: []
   aiList: []
   startText: {fileID: 0}
+  nextCheckpointIndex: 0
   greenMaterial: {fileID: 2100000, guid: 438643ac49b5a1f46aa05f8f381a7122, type: 2}
+  redMaterial: {fileID: 2100000, guid: 589c438b4c39e5e44b249724f0f526d7, type: 2}
   clearMaterial: {fileID: 2100000, guid: 39cd7025a7de9144b8263137228b62be, type: 2}
 --- !u!1 &338630986210531929
 GameObject:
@@ -215,8 +217,10 @@ MonoBehaviour:
   point1: {fileID: 8983463303602670232}
   point2: {fileID: 833474177795680761}
   greenMaterial: {fileID: 2100000, guid: 438643ac49b5a1f46aa05f8f381a7122, type: 2}
+  redMaterial: {fileID: 2100000, guid: 589c438b4c39e5e44b249724f0f526d7, type: 2}
   clearMaterial: {fileID: 2100000, guid: 39cd7025a7de9144b8263137228b62be, type: 2}
   rend: {fileID: 0}
+  active: 0
 --- !u!1 &704971033703812672
 GameObject:
   m_ObjectHideFlags: 0
@@ -527,8 +531,10 @@ MonoBehaviour:
   point1: {fileID: 4921739201056250439}
   point2: {fileID: 594114162555678002}
   greenMaterial: {fileID: 2100000, guid: 438643ac49b5a1f46aa05f8f381a7122, type: 2}
+  redMaterial: {fileID: 2100000, guid: 589c438b4c39e5e44b249724f0f526d7, type: 2}
   clearMaterial: {fileID: 2100000, guid: 39cd7025a7de9144b8263137228b62be, type: 2}
   rend: {fileID: 0}
+  active: 1
 --- !u!1 &3708759506455764505
 GameObject:
   m_ObjectHideFlags: 0
@@ -653,8 +659,10 @@ MonoBehaviour:
   point1: {fileID: 8865240532018601516}
   point2: {fileID: 5640714810803098534}
   greenMaterial: {fileID: 2100000, guid: 438643ac49b5a1f46aa05f8f381a7122, type: 2}
+  redMaterial: {fileID: 2100000, guid: 589c438b4c39e5e44b249724f0f526d7, type: 2}
   clearMaterial: {fileID: 2100000, guid: 39cd7025a7de9144b8263137228b62be, type: 2}
   rend: {fileID: 0}
+  active: 0
 --- !u!1 &3873964353138755336
 GameObject:
   m_ObjectHideFlags: 0
@@ -779,8 +787,10 @@ MonoBehaviour:
   point1: {fileID: 6900768864247191838}
   point2: {fileID: 4450376776500104150}
   greenMaterial: {fileID: 2100000, guid: 438643ac49b5a1f46aa05f8f381a7122, type: 2}
+  redMaterial: {fileID: 2100000, guid: 589c438b4c39e5e44b249724f0f526d7, type: 2}
   clearMaterial: {fileID: 2100000, guid: 39cd7025a7de9144b8263137228b62be, type: 2}
   rend: {fileID: 0}
+  active: 0
 --- !u!1 &7644975947987605842
 GameObject:
   m_ObjectHideFlags: 0
