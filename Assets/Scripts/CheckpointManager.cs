@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Unity.VisualScripting;
+using UnityEditor.TerrainTools;
 using UnityEngine;
 using Text = TMPro.TextMeshProUGUI;
 
@@ -13,6 +14,8 @@ public class CheckpointManager : MonoBehaviour
     [SerializeField] private List<AIQuadContoller> aiList;
     [SerializeField] private Text startText;
     [SerializeField] private int nextCheckpointIndex;
+    [SerializeField] private int currentLap;
+    [SerializeField] private int checkpointSize;
 
     public event EventHandler OnPlayerCorrectCheckpoint;
     public event EventHandler OnPlayerIncorrectCheckpoint;
@@ -21,7 +24,7 @@ public class CheckpointManager : MonoBehaviour
     [SerializeField] private Material redMaterial;
     [SerializeField] private Material clearMaterial;
 
-    //[SerializeField] private SingleCheckpoint nextCheckpoint;
+    [SerializeField] private SingleCheckpoint nextCheckpoint;
 
     private void Awake()
     {
@@ -52,26 +55,47 @@ public class CheckpointManager : MonoBehaviour
         StartCoroutine(StartRace());
     }
 
+    private void Update()
+    {
+
+        if (nextCheckpointIndex >= singleCheckpointList.Count)
+        {
+            foreach (Transform seperateCheckpoint in checkpointTransform)
+            {
+                if (!seperateCheckpoint.GetComponent<SingleCheckpoint>().CheckCheckPointMark()) { return; }
+                else {  }
+            }
+
+            foreach (Transform seperateCheckpoint in checkpointTransform)
+            {
+                seperateCheckpoint.GetComponent<SingleCheckpoint>().CheckpointMarkedToFalse();
+                
+            }
+            currentLap++;
+        }
+
+    }
+
     public void PlayerThroughCheckpoint(SingleCheckpoint checkpointSingle)
     {
-        //Debug.Log(checkpointSingle.transform.name);
-        //Debug.Log(singleCheckpointList.IndexOf(checkpointSingle));
-        if (singleCheckpointList.IndexOf(checkpointSingle) == nextCheckpointIndex) 
+        if (singleCheckpointList.IndexOf(checkpointSingle) == nextCheckpointIndex && checkpointSingle.CheckpointMarkedToTrue()) 
         {
-            nextCheckpointIndex = (nextCheckpointIndex + 1) % singleCheckpointList.Count;
+            //nextCheckpointIndex = (nextCheckpointIndex + 1) % singleCheckpointList.Count;
+            nextCheckpointIndex++;
             Debug.Log("Correct");
             OnPlayerCorrectCheckpoint?.Invoke(this, EventArgs.Empty);
         }
-        /*else if (singleCheckpointList.IndexOf(checkpointSingle) == nextCheckpointIndex + 1)
-        {
-            Debug.Log("Wrong");
-            checkpoint.rend.material = redMaterial;
-        }*/
         else
         {
             Debug.Log("Wrong");
             OnPlayerIncorrectCheckpoint?.Invoke(this, EventArgs.Empty);
         }
+
+        if (currentLap >= 3)
+        {
+            Debug.Log("Race Finished!");
+        }
+
     }
 
     public void AssignIntialDestinations()
@@ -92,5 +116,14 @@ public class CheckpointManager : MonoBehaviour
         startText.text = "GO!";
         aiList = FindObjectsOfType<AIQuadContoller>().ToList<AIQuadContoller>();
         AssignIntialDestinations();
+    }
+
+    private void SetToTrue(SingleCheckpoint checkpointSingle)
+    {
+        if (checkpointSingle.CheckpointMarkedToFalse())
+        {
+            currentLap++;
+            checkpointSingle.CheckpointMarkedToTrue();
+        }
     }
 }
